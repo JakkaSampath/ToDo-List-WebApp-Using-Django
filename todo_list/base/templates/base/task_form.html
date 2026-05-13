@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="page-card form-box">
+    <a class="back-link" href="{% url 'tasks' %}">← Go Back</a>
+
+    <h1>Task Form</h1>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Save Task">
+    </form>
+</div>
+
+{% endblock content %}

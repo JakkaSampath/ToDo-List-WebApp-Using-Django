@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="page-card delete-box">
+    <a class="back-link" href="{% url 'tasks' %}">← Back to Task List</a>
+
+    <h1>Delete Task</h1>
+
+    <p>
+        Are you sure you want to delete
+        <span class="delete-task-name">"{{ task }}"</span>?
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button class="danger-btn" type="submit">Yes, Delete</button>
+    </form>
+</div>
+
+{% endblock content %}

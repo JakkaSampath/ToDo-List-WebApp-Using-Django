@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="page-card task-detail-card">
+    <a class="back-link" href="{% url 'tasks' %}">← Back to Task List</a>
+
+    <div class="task-detail-title">
+        <h1>{{ task.title }}</h1>
+    </div>
+
+    <div class="task-description">
+        <h3>Description</h3>
+        <p>{{ task.description|default:"No description added for this task." }}</p>
+    </div>
+</div>
+
+{% endblock content %}
